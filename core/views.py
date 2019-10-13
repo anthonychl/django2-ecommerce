@@ -15,7 +15,7 @@ import string
 import stripe
 #  stripe.api_key = settings.STRIPE_SECRET_KEY
 
-stripe.api_key = "sk_test_4eC39HqLyjWDarjtT1zdp7dc"  # add your secret key here
+stripe.api_key = ""  # add your secret key here
 
 class MyOrdersView(ListView, LoginRequiredMixin):
     model = Order
