@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+
+{% block content %}
+<main>
+    <div class="container">
+        {% if user.is_authenticated %}
+        {% if order and user == order.user%}
+
+        <!-- Card -->
+        <div class="card">
+
+            <!-- Card content -->
+            <div class="card-body">
+
+                <!-- Title -->
+                <h3 class="card-title">Order {{ order.ref_code }} Details</h3>
+                <!-- Text -->
+                <p class="card-text">Details available for this order, contact us if you
+                    need more information or if something is wrong about the order, thanks
+                </p>
+                <hr>
+                <h4> Order Confirmation #: {{order.ref_code}} </h4>
+                <hr>
+                <h4> Ordered on: {{order.ordered_date}} </h4>
+                <hr>
+                <h4> Shipping to: </h4>
+                <p>{{order.shipping_address.street_address}} {{order.shipping_address.apartment_address}}
+                    {{order.shipping_address.country}} {{order.shipping_address.zip}}</p>
+                <hr>
+                <h4> Billing to: </h4>
+                <p>{{order.billing_address.street_address}} {{order.billing_address.apartment_address}}
+                    {{order.billing_address.country}} {{order.billing_address.zip}}</p>
+                <h4>Order Status: </h4>
+                {% if order.ordered %}
+                <p>Ordered</p>
+                {% elif order.being_delivered %}
+                <p>Being delivered</p>
+                {% elif order.recieved %}
+                <p>Recieved</p>
+                {% elif order.refund_requested %}
+                <p>Refund requested</p>
+                {% elif order.refund_granted %}
+                <p>Refund granted</p>
+                {% endif %}
+
+                <div style="float: right;">
+                    <!-- Button -->
+                    <a href="{% url 'core:myorders' %}" class="btn btn-primary">BACK</a>
+                    <!-- Button -->
+                    <a href="{% url 'core:home' %}" class="btn btn-primary">CONTINUE SHOPPING</a>
+                </div>
+            </div>
+
+        </div>
+        <!-- Card -->
+
+        {% else %}
+        <h2>No order to confirm</h2>
+        <div style="float: right;">
+            <a href="{% url 'core:home' %}" class="btn btn-primary">CONTINUE SHOPPING</a>
+        </div>
+        {% endif %}
+        {% endif %}
+
+    </div>
+</main>
+<script>
+    function printConfirmation() {
+        window.print();
+    }
+</script>
+{% endblock content %}
