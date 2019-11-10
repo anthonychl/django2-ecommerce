@@ -17,14 +17,17 @@ import stripe
 
 stripe.api_key = ""  # add your secret key here
 
+
 class MyOrdersView(ListView, LoginRequiredMixin):
     model = Order
     template_name = 'myorders.html'
     ordering = ['-ordered_date']
 
+
 class OrderDetailView(DetailView, LoginRequiredMixin):
     model = Order
     template_name = 'order-detail.html'
+
 
 class confirmationView(DetailView, LoginRequiredMixin):
     model = Order
