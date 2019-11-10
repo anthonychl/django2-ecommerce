@@ -18,7 +18,7 @@ Product
 ![product](ecomm-md-img/ecomm-product.png)
 
 Order Summary
-![OrderSummary](ecomm-md-img/ecomm-OrderSummary.png)
+![OrderSummary](ecomm-md-img/ecomm-ordersummary.png)
 
 Checkout
 ![Checkout](ecomm-md-img/ecomm-checkoutform.png)
