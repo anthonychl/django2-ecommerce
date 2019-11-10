@@ -30,7 +30,7 @@ Order Confirmation
 ![OrderConf](ecomm-md-img/ecomm-orderconf.png)
 
 Order Details
-![OldOrderDetails](ecomm-md-img/ecomm-OldOrderDetails.png)
+![OldOrderDetails](ecomm-md-img/ecomm-oldorderdetails.png)
 
 All Orders
 ![AllOrders](ecomm-md-img/ecomm-allorders.png)
